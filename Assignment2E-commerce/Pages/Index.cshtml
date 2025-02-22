@@ -1,0 +1,37 @@
+﻿@page
+@model Assignment2E_commerce.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+<h1>Assignment2</h1>
+
+<div style="border: 1px solid blue; padding: 10px; margin: 10px;">
+    <a asp-page="Privacy" asp-route-name="Billy" asp-route-age="6">Happy birthday Billy!</a>
+</div>
+
+<div style="border: 1px solid blue; padding: 10px; margin: 10px;">
+    <h3>GET</h3>
+    <form method="get" asp-page="Privacy">
+        Name <input type="text" name="name" />
+        Age <input type="number" name="age" value="0" />
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div style="border: 1px solid blue; padding: 10px; margin: 10px;">
+    <h3>CROSS POST</h3>
+    <form method="post" asp-page="Privacy">
+        Name <input asp-for="Person.Name" />
+        Age <input asp-for="Person.Age" value="0" />
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div style="border: 1px solid blue; padding: 10px; margin: 10px;">
+    <h3>POSTBACK</h3>
+    <form method="post" asp-page="Index">
+        Name <input asp-for="Person.Name" />
+        Age <input asp-for="Person.Age" value="0" />
+        <button type="submit">Submit</button>
+    </form>
+</div>
